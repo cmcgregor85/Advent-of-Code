@@ -1,5 +1,5 @@
 import re
-path = "C:/Users/Collin/Desktop/Advent of Code/Day5/Day5_input.txt"
+path = "C:/Users/cmcgregor/source/repos/AdventOfCode/Advent-of-Code/Day5/Day5_input.txt"
 list1 = ["Q","F","M","R","L","W","C","V"]
 list2 = ["D","Q","L"]
 list3 = ["P","S","R","G","W","C","N","B"]
@@ -30,15 +30,14 @@ with open(path) as inputFile:
         print(destStack)
         print(numCrates)
         count2 += 1
-
-        mover = slice(len(srcStack)-numCrates,len(srcStack))
+        moveList = list()
         while counter < numCrates:
             print(srcStack)
-            mover = srcStack.pop()
-            print(mover)
-            destStack.append(mover)
-            print(destStack) 
+            moveList.extend(srcStack.pop())
+            print(moveList)
             counter+=1
+        moveList.reverse()
+        destStack.extend(moveList)
         
     endString = ""
     for x in startCondition:
@@ -46,6 +45,12 @@ with open(path) as inputFile:
     print(startCondition)
     print(endString)
             
+        
+
+
+
+        
+
         
 
 
