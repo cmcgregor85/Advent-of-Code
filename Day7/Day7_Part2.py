@@ -1,5 +1,5 @@
 path = "C:\\Users\\Collin\\Source\Advent_Of_Code\\Advent-of-Code\\Day7\\Day7_Input.txt"
-directories = {'*/':0}
+directories = {'/':0}
 currentDir = ''
 dirHist = []
 directoryList = {}
@@ -12,11 +12,11 @@ with open(path) as inputFile:
                 currentDir = dirHist[depth-1]
                 dirHist.pop()
             else:
-                currentDir = currentDir +"*"+ i[5:]
+                currentDir = currentDir + i[5:]
                 dirHist.append(currentDir)
 
         elif 'dir' in i:
-            directoryName = currentDir +"*"+ (i[4:])
+            directoryName = currentDir + (i[4:])
             directories[directoryName] = 0
         elif '$ ls' in i:
             continue
@@ -25,7 +25,7 @@ with open(path) as inputFile:
                 currentSize = directories[x]
                 currentSize+=int(i[:i.find(' ')])
                 directories[x] = currentSize
-total = 70000000-directories['*/']
+total = 70000000-directories['/']
 total = 30000000-total
 
 for z in directories:
