@@ -2,6 +2,7 @@ path = "C:\\Users\\Collin\\Source\Advent_Of_Code\\Advent-of-Code\\Day7\\Day7_Inp
 directories = {'/':0}
 currentDir = ''
 dirHist = []
+directoryList = {}
 with open(path) as inputFile:
     input = inputFile.read().splitlines()
     for i in input:
@@ -24,12 +25,18 @@ with open(path) as inputFile:
                 currentSize = directories[x]
                 currentSize+=int(i[:i.find(' ')])
                 directories[x] = currentSize
-total = 0
-for z in directories:
-    if directories[z] < 100000:
-        total+=directories[z]
+total = 70000000-directories['/']
+total = 30000000-total
 
-print(total)
+for z in directories:
+    if directories[z] > total:
+        directoryList[z]=directories[z]
+x=[]
+for y in directoryList:
+    x.append(directoryList[y])
+x.sort()
+print(x[0])
+
 
 
 
