@@ -26,5 +26,4 @@ with open(path) as inputFile:
             x+=int(line[5:])
 
     if cycleCount == printer:
-        print(x*printer)    
-
+        print(x*printer)   
